@@ -30,15 +30,17 @@ window.ResizeObserver = ResizeObserver;
  * NOTE: This can be removed once we move to a typescript
  * setup & we throw tests on type errors.
  */
-
 const error = console.error;
+const warn = console.warn;
+
 window.console = {
   ...window.console,
   error(...args: any[]) {
     const message = format(...args);
 
     if (/(Invalid prop|Failed prop type)/gi.test(message)) {
-      throw new Error(message);
+      error(message);
+      process.exit(1);
 
       // Ignore errors thrown by styled-components. This can be removed once we upgrade
       // to styled-components@6 and have separate props that are rendered in the DOM by
@@ -48,6 +50,19 @@ window.console = {
       // do nothing
     } else {
       error(...args);
+
+      if (process.env.CI) {
+        error("There's a console.error in your code. Please remove it before committing.");
+        process.exit(1);
+      }
+    }
+  },
+  warn(...args: any[]) {
+    warn(...args);
+
+    if (process.env.CI) {
+      warn("There's a console.warn in your code. Please remove it before committing.");
+      process.exit(1);
     }
   },
 };
