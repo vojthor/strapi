@@ -7769,7 +7769,7 @@ __metadata:
     chokidar: 3.5.3
     commander: 8.3.0
     esbuild: 0.19.2
-    esbuild-register: 3.4.2
+    esbuild-register: 3.5.0
     eslint-config-custom: "workspace:*"
     get-latest-version: 5.1.0
     git-url-parse: 13.1.0
@@ -15523,7 +15523,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-register@npm:3.4.2, esbuild-register@npm:^3.4.0":
+"esbuild-register@npm:3.5.0":
+  version: 3.5.0
+  resolution: "esbuild-register@npm:3.5.0"
+  dependencies:
+    debug: ^4.3.4
+  peerDependencies:
+    esbuild: ">=0.12 <1"
+  checksum: f4307753c9672a2c901d04a1165031594a854f0a4c6f4c1db08aa393b68a193d38f2df483dc8ca0513e89f7b8998415e7e26fb9830989fb8cdccc5fb5f181c6b
+  languageName: node
+  linkType: hard
+
+"esbuild-register@npm:^3.4.0":
   version: 3.4.2
   resolution: "esbuild-register@npm:3.4.2"
   dependencies:
