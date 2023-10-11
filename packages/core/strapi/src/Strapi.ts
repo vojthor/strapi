@@ -687,12 +687,38 @@ interface Init {
   compile: typeof compile;
 }
 
+let singleton: Strapi;
+
 const initFn = (options: StrapiOptions = {}) => {
-  const strapi = new Strapi(options);
-  global.strapi = strapi as LoadedStrapi;
-  return strapi;
+  if (singleton) {
+    return singleton;
+  }
+
+  singleton = new Strapi(options);
+  global.strapi = singleton as LoadedStrapi;
+  return singleton;
 };
 
 const init: Init = Object.assign(initFn, { factories, compile });
 
-export default init;
+export default new Proxy(init, {
+  get(target, prop) {
+    if (!singleton) {
+      throw new Error('Strapi is not initialized');
+    }
+
+    if (prop === 'factories') {
+      return target.factories;
+    }
+
+    if (prop === 'compile') {
+      return target.compile;
+    }
+
+    return Reflect.get(singleton, prop, singleton);
+  },
+  // TODO: add during v5
+  // set() {
+  //   throw new Error('Strapi is a read-only object');
+  // },
+});
