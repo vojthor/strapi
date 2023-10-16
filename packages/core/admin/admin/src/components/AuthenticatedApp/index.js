@@ -13,7 +13,8 @@ import { useQueries } from 'react-query';
 
 import packageJSON from '../../../../package.json';
 import { useConfiguration } from '../../hooks/useConfiguration';
-import { getFullName, hashAdminUserEmail } from '../../utils';
+import { getFullName } from '../../utils/getFullName';
+import { hashAdminUserEmail } from '../../utils/hashAdminUserEmail';
 import { NpsSurvey } from '../NpsSurvey';
 import { PluginsInitializer } from '../PluginsInitializer';
 import RBACProvider from '../RBACProvider';
