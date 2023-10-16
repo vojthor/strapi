@@ -7771,7 +7771,7 @@ __metadata:
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
     react-dom: ^17.0.0 || ^18.0.0
-  checksum: 6bbb9928d7658e7c9c8c43b1653400e6f554b973a4ab59e7fe9f99714e99a8e4c48745bf80b4adc463b1cb5151637134530216479fe20200791fa6e64dea807c
+  checksum: cf35b06d236f790330df64f5e46fbbe4a59e71b9ab6ca6f249c60db1cc255ffc230e37dfd7e82cd1a3177c37dd52cdbf329d5e5776571ad1cf9d52a63d7061dc
   languageName: node
   linkType: hard
 
@@ -7849,7 +7849,7 @@ __metadata:
     "@types/react": ^18.2.7
     "@types/react-dom": ^18.2.12
     "@types/react-router-dom": ^5.3.3
-    "@types/styled-components": ^5.1.28
+    "@types/styled-components": 5.1.26
     eslint-config-custom: 4.14.4
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -9913,17 +9913,6 @@ __metadata:
     "@types/react": "*"
     csstype: ^3.0.2
   checksum: 84f53b3101739b20d1731554fb7735bc2f3f5d050a8b392e9845403c8c8bbd729737d033978649f9195a97b557875b010d46e35a4538564a2d0dbcce661dbf76
-  languageName: node
-  linkType: hard
-
-"@types/styled-components@npm:^5.1.28":
-  version: 5.1.28
-  resolution: "@types/styled-components@npm:5.1.28"
-  dependencies:
-    "@types/hoist-non-react-statics": "*"
-    "@types/react": "*"
-    csstype: ^3.0.2
-  checksum: 2e12be4fdc2d60f63e16f8f5cac98d8305e0686b3332a160fec39df2a277f16715b878e25384ddda29e48acf101110a29ca108b716296e9a06bf2740f1257385
   languageName: node
   linkType: hard
 
