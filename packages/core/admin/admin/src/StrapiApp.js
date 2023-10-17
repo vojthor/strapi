@@ -10,9 +10,10 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Logo from './assets/images/logo-strapi-2022.svg';
 import { LANGUAGE_LOCAL_STORAGE_KEY } from './components/LanguageProvider';
-import Providers from './components/Providers';
-import { customFields, Plugin, Reducers } from './core/apis';
+import { customFields, Plugin } from './core/apis';
 import { configureStore } from './core/store';
+import { Providers } from './components/Providers';
+import configureStore from './core/store/configureStore';
 import { basename, createHook } from './core/utils';
 import {
   INJECT_COLUMN_IN_TABLE,
